@@ -16,12 +16,12 @@ model Foo {
   description String
   value       Int
   updateAt    DateTime @updatedAt
-  Bar         Bar?
+  Bar         Bar[]
 }
 
 model Bar {
   id    String @id @default(cuid())
-  fooId String @unique
+  fooId String
 
   stage    Int
   createAt DateTime @default(now())
