@@ -9,3 +9,22 @@ datasource test {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
+model Foo {
+  id String @id @default(cuid())
+
+  description String
+  value       Int
+  updateAt    DateTime @updatedAt
+  Bar         Bar?
+}
+
+model Bar {
+  id    String @id @default(cuid())
+  fooId String @unique
+
+  stage    Int
+  createAt DateTime @default(now())
+
+  foo Foo @relation(fields: [fooId], references: [id])
+}
