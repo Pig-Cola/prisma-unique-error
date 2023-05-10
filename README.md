@@ -1,3 +1,12 @@
+# Issue
+The issue has been posted [here](https://github.com/prisma/prisma/issues/13935).
+
+## 한국어 요약
+1:1 관계에서 1:N 관계로 변경할 때,
+Unique를 해제 하였지만 여전히 index가 남아있습니다.
+
+이 작업만 단일로 수행하면 migration파일 (sql)이 비어있습니다.
+
 ### Bug description
 
 I found a bug while using prisma.
